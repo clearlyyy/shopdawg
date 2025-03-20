@@ -1,0 +1,35 @@
+[
+    {
+      "productName": "Cutting Board",
+      "description": "A Great looking Cutting Board",
+      "price": 199.99,
+      "originalPrice": 253.99,
+      "inStock": true,
+      "imageSrc": "/assets/images/IMG_5387.JPEG"
+    },
+    
+    {
+      "productName": "Plant Pot",
+      "description": "A Great looking Planter for your garden",
+      "price": 130.99,
+      "originalPrice": 140.99,
+      "inStock": true,
+      "imageSrc": "/assets/images/IMG_4477.JPEG"
+    },
+    {
+        "productName": "Epoxy Table",
+        "description": "A Stylish Wooden Epoxy Table",
+        "price": 1229.99,
+        "originalPrice": 1499.99,
+        "inStock": true,
+        "imageSrc": "/assets/images/IMG_5225.JPEG"
+    },
+    {
+        "productName": "Custom Cutting Board",
+        "description": "A Cutting board with your design of choice laser engraved onto it.",
+        "price": 69.99,
+        "originalPrice": 74.99,
+        "inStock": true,
+        "imageSrc": "/assets/images/IMG_6959.JPEG"
+    }
+]
