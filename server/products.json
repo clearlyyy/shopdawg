@@ -5,7 +5,10 @@
       "price": 199.99,
       "originalPrice": 253.99,
       "inStock": true,
-      "imageSrc": "/assets/images/IMG_5387.JPEG"
+      "imageSrc": "/assets/images/IMG_5387.JPEG",
+      "custom": false,
+      "additionalInfo": "",
+      "productID": "01"
     },
     
     {
@@ -14,15 +17,21 @@
       "price": 130.99,
       "originalPrice": 140.99,
       "inStock": true,
-      "imageSrc": "/assets/images/IMG_4477.JPEG"
+      "imageSrc": "/assets/images/IMG_4477.JPEG",
+      "custom": false,
+      "additionalInfo": "",
+      "productID": "03"
     },
     {
-        "productName": "Epoxy Table",
-        "description": "A Stylish Wooden Epoxy Table",
+        "productName": "Cutting Board 2",
+        "description": "A Stylish Wooden Cutting Board",
         "price": 1229.99,
         "originalPrice": 1499.99,
         "inStock": true,
-        "imageSrc": "/assets/images/IMG_5225.JPEG"
+        "imageSrc": "/assets/images/IMG_5225.JPEG",
+        "custom": false,
+        "additionalInfo": "",
+        "productID": "04"
     },
     {
         "productName": "Custom Cutting Board",
@@ -30,6 +39,86 @@
         "price": 69.99,
         "originalPrice": 74.99,
         "inStock": true,
-        "imageSrc": "/assets/images/IMG_6959.JPEG"
+        "imageSrc": "/assets/images/IMG_6959.JPEG",
+        "custom": true,
+        "additionalInfo": "",
+        "productID": "05"
+    },
+    {
+        "productName": "Outdoor Cooler",
+        "description": "A Sleek Outdoor Cooler",
+        "price": 169.99,
+        "originalPrice": 189.99,
+        "inStock": true,
+        "imageSrc": "/assets/images/IMG_4687.JPEG",
+        "custom": false,
+        "additionalInfo": "",
+        "productID": "06"
+    },
+    {
+      "productName": "Outdoor Cooler",
+      "description": "A Sleek Outdoor Cooler",
+      "price": 169.99,
+      "originalPrice": 189.99,
+      "inStock": true,
+      "imageSrc": "/assets/images/IMG_4687.JPEG",
+      "custom": false,
+      "additionalInfo": "",
+      "productID": "07"
+    },
+    {
+      "productName": "Outdoor Cooler",
+      "description": "A Sleek Outdoor Cooler",
+      "price": 169.99,
+      "originalPrice": 189.99,
+      "inStock": true,
+      "imageSrc": "/assets/images/IMG_4687.JPEG",
+      "custom": false,
+      "additionalInfo": "",
+      "productID": "08"
+    },
+    {
+      "productName": "Outdoor Cooler",
+      "description": "A Sleek Outdoor Cooler",
+      "price": 169.99,
+      "originalPrice": 189.99,
+      "inStock": true,
+      "imageSrc": "/assets/images/IMG_4687.JPEG",
+      "custom": false,
+      "additionalInfo": "",
+      "productID": "09"
+    },
+    {
+      "productName": "Outdoor Cooler",
+      "description": "A Sleek Outdoor Cooler",
+      "price": 169.99,
+      "originalPrice": 189.99,
+      "inStock": true,
+      "imageSrc": "/assets/images/IMG_4687.JPEG",
+      "custom": false,
+      "additionalInfo": "",
+      "productID": "10"
+    },
+    {
+      "productName": "Outdoor Cooler",
+      "description": "A Sleek Outdoor Cooler",
+      "price": 169.99,
+      "originalPrice": 189.99,
+      "inStock": true,
+      "imageSrc": "/assets/images/IMG_4687.JPEG",
+      "custom": false,
+      "additionalInfo": "",
+      "productID": "11"
+    },
+    {
+      "productName": "Test Item",
+      "description": "A Sleek Outdoor Cooler",
+      "price": 0.10,
+      "originalPrice": 0.40,
+      "inStock": true,
+      "imageSrc": "/assets/images/IMG_4687.JPEG",
+      "custom": false,
+      "additionalInfo": "",
+      "productID": "12"
     }
 ]
