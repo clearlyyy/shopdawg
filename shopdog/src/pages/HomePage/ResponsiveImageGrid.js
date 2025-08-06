@@ -2,22 +2,21 @@ import React from "react";
 import { Box, Typography, Button, useMediaQuery } from "@mui/material";
 import { Link } from "react-router-dom";
 
-
 const items = [
   {
     name: "Custom Cutting Board",
     description: "Your design laser engraved onto a cutting board.",
-    image: "/assets/images/IMG_6959.JPEG",
+    image: "${process.env.PUBLIC_URL}/assets/images/IMG_6959.JPEG",
   },
   {
     name: "Small Trinkets",
     description: "Small Trinkets for your house",
-    image: "/assets/images/IMG_5235.JPEG",
+    image: "${process.env.PUBLIC_URL}/assets/images/IMG_5235.JPEG",
   },
   {
     name: "Wavy Cutting Board",
     description: "A stylish wavy cutting board.",
-    image: "/assets/images/IMG_5387.JPEG",
+    image: "${process.env.PUBLIC_URL}/assets/images/IMG_5387.JPEG",
   },
 ];
 
@@ -54,7 +53,7 @@ const ResponsiveImageRow = () => {
           transform: "translate(-50%, -50%)",
           textAlign: "center",
           color: "#e0d1cc",
-          zIndex: 10, 
+          zIndex: 10,
         }}
       >
         <Typography
@@ -62,7 +61,7 @@ const ResponsiveImageRow = () => {
           fontWeight="bold"
           sx={{
             mb: 2,
-            textShadow: "2px 2px 10px rgba(0, 0, 0, 0.8)", 
+            textShadow: "2px 2px 10px rgba(0, 0, 0, 0.8)",
           }}
         >
           Explore Our Collection
@@ -72,7 +71,7 @@ const ResponsiveImageRow = () => {
           sx={{
             mb: 3,
             textShadow: "1px 1px 3px rgba(0, 0, 0, 0.8)", // Add shadow to text
-            fontWeight: "bold"
+            fontWeight: "bold",
           }}
         >
           Discover a range of custom-made items that are perfect for your home.
@@ -96,7 +95,7 @@ const ResponsiveImageRow = () => {
       {/* Background SVG */}
       <Box
         component="img"
-        src="/assets/images/logo.svg"
+        src="${process.env.PUBLIC_URL}/assets/images/logo.svg"
         alt="Background"
         sx={{
           position: "absolute",
