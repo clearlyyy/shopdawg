@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/shopdawg/static/css/main.27a3024b.css",
-    "main.js": "/shopdawg/static/js/main.8d1c48eb.js",
+    "main.js": "/shopdawg/static/js/main.e3df31a8.js",
     "static/js/453.42816abb.chunk.js": "/shopdawg/static/js/453.42816abb.chunk.js",
     "static/media/logo.svg": "/shopdawg/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/shopdawg/index.html",
     "main.27a3024b.css.map": "/shopdawg/static/css/main.27a3024b.css.map",
-    "main.8d1c48eb.js.map": "/shopdawg/static/js/main.8d1c48eb.js.map",
+    "main.e3df31a8.js.map": "/shopdawg/static/js/main.e3df31a8.js.map",
     "453.42816abb.chunk.js.map": "/shopdawg/static/js/453.42816abb.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.27a3024b.css",
-    "static/js/main.8d1c48eb.js"
+    "static/js/main.e3df31a8.js"
   ]
 }
