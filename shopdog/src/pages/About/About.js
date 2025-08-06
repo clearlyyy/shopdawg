@@ -168,7 +168,7 @@ function About() {
                 <CardMedia
                   component="img"
                   height="200"
-                  image="${process.env.PUBLIC_URL}/assets/images/lumber.jpeg"
+                  image={`${process.env.PUBLIC_URL}/assets/images/lumber.jpeg`}
                   alt="Sustainable materials"
                 />
                 <CardContent>
@@ -201,7 +201,7 @@ function About() {
                 <CardMedia
                   component="img"
                   height="200"
-                  image="${process.env.PUBLIC_URL}/assets/images/IMG_5235.JPEG"
+                  image={`${process.env.PUBLIC_URL}/assets/images/IMG_5235.JPEG`}
                   alt="Handcrafted quality"
                 />
                 <CardContent>
@@ -233,7 +233,7 @@ function About() {
                 <CardMedia
                   component="img"
                   height="200"
-                  image="${process.env.PUBLIC_URL}/assets/images/IMG_6959.JPEG"
+                  image={`${process.env.PUBLIC_URL}/assets/images/IMG_6959.JPEG`}
                   alt="Custom designs"
                 />
                 <CardContent>
@@ -305,7 +305,7 @@ function About() {
             <Grid item xs={12} md={6}>
               <Box
                 component="img"
-                src="${process.env.PUBLIC_URL}/assets/images/woodshop.jpg"
+                src={`${process.env.PUBLIC_URL}/assets/images/woodshop.jpg`}
                 alt="Our workshop space"
                 sx={{
                   width: "100%",

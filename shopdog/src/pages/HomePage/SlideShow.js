@@ -1,21 +1,21 @@
-import React, { useState, useEffect } from 'react';
-import { Box, IconButton } from '@mui/material';
-import { ArrowBackIos, ArrowForwardIos } from '@mui/icons-material';
+import React, { useState, useEffect } from "react";
+import { Box, IconButton } from "@mui/material";
+import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
 
-const SlideShow = ({ 
+const SlideShow = ({
   images = [
-    '/assets/images/IMG_5331.JPEG',
-    '/assets/images/IMG_6959.JPEG',
-    '/assets/images/IMG_5387.JPEG',
-    '/assets/images/IMG_5235.JPEG',
-    '/assets/images/IMG_5225.JPEG',
-    '/assets/images/IMG_4687.JPEG',
-    '/assets/images/IMG_4477.JPEG',
+    `${process.env.PUBLIC_URL}/assets/images/IMG_5331.JPEG`,
+    `${process.env.PUBLIC_URL}/assets/images/IMG_6959.JPEG`,
+    `${process.env.PUBLIC_URL}/assets/images/IMG_5387.JPEG`,
+    `${process.env.PUBLIC_URL}/assets/images/IMG_5235.JPEG`,
+    `${process.env.PUBLIC_URL}/assets/images/IMG_5225.JPEG`,
+    `${process.env.PUBLIC_URL}/assets/images/IMG_4687.JPEG`,
+    `${process.env.PUBLIC_URL}/assets/images/IMG_4477.JPEG`,
   ],
   height = 400, // Default height in pixels
   autoPlay = true,
   interval = 5000, // Time between slides in milliseconds
-  children
+  children,
 }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -43,10 +43,10 @@ const SlideShow = ({
   return (
     <Box
       sx={{
-        position: 'relative',
-        width: '100%',
+        position: "relative",
+        width: "100%",
         height: `${height}px`,
-        overflow: 'hidden',
+        overflow: "hidden",
       }}
     >
       {/* Images container */}
@@ -54,15 +54,14 @@ const SlideShow = ({
         <Box
           key={index}
           sx={{
-            position: 'absolute',
+            position: "absolute",
             top: 0,
             left: 0,
-            width: '100%',
-            height: '100%',
+            width: "100%",
+            height: "100%",
             opacity: index === currentSlide ? 1 : 0,
-            transition: 'opacity 0.8s ease-in-out',
+            transition: "opacity 0.8s ease-in-out",
             zIndex: index === currentSlide ? 1 : 0,
-            
           }}
         >
           <Box
@@ -70,10 +69,10 @@ const SlideShow = ({
             src={img}
             alt={`Slide ${index + 1}`}
             sx={{
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover', // This ensures the image fills the area completely
-              objectPosition: 'center',
+              width: "100%",
+              height: "100%",
+              objectFit: "cover", // This ensures the image fills the area completely
+              objectPosition: "center",
             }}
           />
         </Box>
@@ -83,30 +82,30 @@ const SlideShow = ({
       <IconButton
         onClick={prevSlide}
         sx={{
-          position: 'absolute',
+          position: "absolute",
           left: 20,
-          top: '50%',
-          transform: 'translateY(-50%)',
-          backgroundColor: 'rgba(255, 255, 255, 0.5)',
-          '&:hover': {
-            backgroundColor: 'rgba(255, 255, 255, 0.8)',
+          top: "50%",
+          transform: "translateY(-50%)",
+          backgroundColor: "rgba(255, 255, 255, 0.5)",
+          "&:hover": {
+            backgroundColor: "rgba(255, 255, 255, 0.8)",
           },
           zIndex: 3,
         }}
       >
-        <ArrowBackIos sx={{ transform: 'translateX(5px)'}}/>
+        <ArrowBackIos sx={{ transform: "translateX(5px)" }} />
       </IconButton>
 
       <IconButton
         onClick={nextSlide}
         sx={{
-          position: 'absolute',
+          position: "absolute",
           right: 20,
-          top: '50%',
-          transform: 'translateY(-50%)',
-          backgroundColor: 'rgba(255, 255, 255, 0.5)',
-          '&:hover': {
-            backgroundColor: 'rgba(255, 255, 255, 0.8)',
+          top: "50%",
+          transform: "translateY(-50%)",
+          backgroundColor: "rgba(255, 255, 255, 0.5)",
+          "&:hover": {
+            backgroundColor: "rgba(255, 255, 255, 0.8)",
           },
           zIndex: 3,
         }}
@@ -117,11 +116,11 @@ const SlideShow = ({
       {/* Indicator dots */}
       <Box
         sx={{
-          position: 'absolute',
+          position: "absolute",
           bottom: 20,
-          left: '50%',
-          transform: 'translateX(-50%)',
-          display: 'flex',
+          left: "50%",
+          transform: "translateX(-50%)",
+          display: "flex",
           gap: 1,
           zIndex: 2,
         }}
@@ -133,15 +132,16 @@ const SlideShow = ({
             sx={{
               width: 12,
               height: 12,
-              borderRadius: '50%',
-              backgroundColor: index === currentSlide ? 'white' : 'rgba(255, 255, 255, 0.5)',
-              cursor: 'pointer',
-              transition: 'background-color 0.3s',
+              borderRadius: "50%",
+              backgroundColor:
+                index === currentSlide ? "white" : "rgba(255, 255, 255, 0.5)",
+              cursor: "pointer",
+              transition: "background-color 0.3s",
             }}
           />
         ))}
       </Box>
-        {children}
+      {children}
     </Box>
   );
 };

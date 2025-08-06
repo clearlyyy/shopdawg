@@ -20,7 +20,7 @@ const ResponsiveCard = () => {
           <Box padding={2} position="relative">
             <Box
               component="img"
-              src="${process.env.PUBLIC_URL}/assets/images/logoBlack.svg"
+              src={`${process.env.PUBLIC_URL}/assets/images/logoBlack.svg`}
               alt="Background"
               sx={{
                 position: "absolute",
@@ -67,7 +67,7 @@ const ResponsiveCard = () => {
         <Grid item xs={12} md={6}>
           <Box padding={2}>
             <img
-              src="${process.env.PUBLIC_URL}/assets/images/IMG_5332.JPEG"
+              src={`${process.env.PUBLIC_URL}/assets/images/IMG_5332.JPEG`}
               alt="Me"
               style={{
                 width: "90%",
