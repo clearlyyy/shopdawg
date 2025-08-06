@@ -81,7 +81,7 @@ function About() {
             <Grid item xs={12} md={6}>
               <Box
                 component="img"
-                src="/assets/images/selfie.jpg"
+                src={`${process.env.PUBLIC_URL}/assets/images/selfie.jpg`}
                 alt="Master craftsman working on a wooden piece"
                 sx={{
                   width: "100%",

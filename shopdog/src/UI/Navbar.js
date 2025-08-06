@@ -268,7 +268,7 @@ const Navbar = ({ itemsInCart }) => {
           >
             <Typography variant="h6" component="div">
               <img
-                src="/assets/images/logoBlack.svg"
+                src={`${process.env.PUBLIC_URL}/assets/images/logoBlack.svg`}
                 alt="Shop Dawg"
                 width="100px"
                 height="auto"
