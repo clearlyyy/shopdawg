@@ -41,11 +41,11 @@ const PaymentForm = ({ cartItems, setItemsInCart, clientSecret, shippingAddress,
   const subtotal = groupedItems.reduce((total, item) => total + item.price * item.quantity, 0);
   const tax = subtotal * 0.1; // 10% tax
   const total = subtotal + tax;
-  
-  
+
+
   const stripe = useStripe();
   const elements = useElements();
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -66,7 +66,7 @@ const PaymentForm = ({ cartItems, setItemsInCart, clientSecret, shippingAddress,
       setFailedToEnterDetails(true);
       return;
     }
-    
+
     const serializeAddress = (address) => {
       return `name=${encodeURIComponent(address.name)}&` +
              `email=${encodeURIComponent(address.email)}&` +
@@ -76,9 +76,9 @@ const PaymentForm = ({ cartItems, setItemsInCart, clientSecret, shippingAddress,
              `shipping_state=${encodeURIComponent(address.state)}&` +
              `shipping_postal_code=${encodeURIComponent(address.postalCode)}&` +
              `shipping_country=${encodeURIComponent(address.country)}`;
-             
+
     };
-    
+
     // Append the address query string to the return_url
     const returnUrl = `${window.location.origin}/paymentsuccess?${serializeAddress(shippingAddress)}`;
 
@@ -89,14 +89,14 @@ const PaymentForm = ({ cartItems, setItemsInCart, clientSecret, shippingAddress,
         return_url: returnUrl, // This will handle the result after the redirect
       },
     });
-  
+
     console.log("Error:", error);
     console.log("Payment Intent:", paymentIntent);
-  
+
     if (error) {
       console.error("Payment failed:", error.message);
       navigate('/paymentfailed'); // Redirect to payment failed page
-  
+
       await fetch(`${process.env.REACT_APP_API_URL}/payment-status`, {
         method: "POST",
         headers: {"Content-Type": "application/json"},
@@ -108,7 +108,7 @@ const PaymentForm = ({ cartItems, setItemsInCart, clientSecret, shippingAddress,
     } else if (paymentIntent && paymentIntent.status === 'succeeded') {
       console.log("Payment successful", paymentIntent);
       navigate('/paymentsuccess' ); // Redirect to payment success page
-  
+
       // Send the payment success status to the server
       await fetch(`${process.env.REACT_APP_API_URL}/payment-status`, {
         method: "POST",
@@ -276,7 +276,7 @@ const Payment = ({ cartItems, setItemsInCart, shippingAddress, setShippingAddres
 
     console.log("Cart Items:", cartItems);
     console.log("Calculated Total Cost:", total);
-    
+
     setTotalCost(total);
 
     if (total <= 0) return; // Prevent request if total is 0
@@ -287,7 +287,7 @@ const Payment = ({ cartItems, setItemsInCart, shippingAddress, setShippingAddres
             const response = await fetch(`${process.env.REACT_APP_API_URL}/create-payment-intent`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ amount: Math.round(total * 100), cartItems }), 
+                body: JSON.stringify({ amount: Math.round(total * 100), cartItems }),
             });
 
             if (!response.ok) {
@@ -297,6 +297,7 @@ const Payment = ({ cartItems, setItemsInCart, shippingAddress, setShippingAddres
             const data = await response.json();
             console.log("Received PaymentIntent:", data);
             setClientSecret(data.clientSecret);
+            // THIS IS A TEST KEY, This wouldn't be done in production.
             setStripePromise(loadStripe("pk_test_51R5FP0CyZlPHStJdCuTolKP7kOlg3Z6HRzXVDBzzcIS3EsMkNidMbVY08hhNU8ai70FxROjwEBnQ3aIGgpe6GjKC00fpNzLgyF"));
         } catch (error) {
             console.error("Error fetching client secret:", error);
@@ -311,7 +312,7 @@ const Payment = ({ cartItems, setItemsInCart, shippingAddress, setShippingAddres
       {clientSecret ? (
         <PaymentForm cartItems={cartItems} setItemsInCart={setItemsInCart} clientSecret={clientSecret} shippingAddress={shippingAddress} setShippingAddress={setShippingAddress} />
       ) : (
-        <div>Loading...</div> 
+        <div>Loading...</div>
       )}
     </Elements>
   );

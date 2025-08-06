@@ -17,28 +17,28 @@ function PaymentFailed() {
         const getPaymentStatus = async () => {
           const urlParams = new URLSearchParams(window.location.search);
           const paymentIntentId = urlParams.get('payment_intent');
-      
+
           if (paymentIntentId) {
             try {
               // Fetch payment status from backend
               const response = await fetch(`${process.env.REACT_APP_API_URL}/payment-status/${paymentIntentId}`);
               const data = await response.json();
-      
+
               if (!response.ok) {
                 throw new Error(data.error || "Failed to fetch payment status");
               }
-      
+
               const paymentStatus = data.status; // Extract the actual status
               console.log("Payment status:", paymentStatus);
-      
+
               // Handle based on the real status
               if (paymentStatus === "succeeded") {
                 console.log("Payment successful:", paymentIntentId);
               } else {
                 console.log("Payment failed or incomplete:", paymentStatus);
               }
-      
-              // Send the status to the backend 
+
+              // Send the status to the backend
               await fetch(`${process.env.REACT_APP_API_URL}/payment-status`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -52,9 +52,9 @@ function PaymentFailed() {
             }
           }
         };
-      
+
         getPaymentStatus();
-      }, []);       
+      }, []);
 
   return (
     <div>

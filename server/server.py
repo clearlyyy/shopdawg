@@ -13,8 +13,9 @@ CORS(app)
 
 
 # Endpoint to create PaymentIntent and return client_secret
-STRIPE_SECRET_KEY = "sk_test_51R5FP0CyZlPHStJdtPlBALqWyi56nCughVwn5ORpOiKm1AukzeLOZqo7S3mHjACMa3yvq6V7EkLM9EDFscvrwEdh00FDxN9DOf"  # Replace with your actual secret key
-STRIPE_PUBLIC_KEY = "pk_test_51R5FP0CyZlPHStJdCuTolKP7kOlg3Z6HRzXVDBzzcIS3EsMkNidMbVY08hhNU8ai70FxROjwEBnQ3aIGgpe6GjKC00fpNzLgyF"  # Replace with your actual public key
+# THESE ARE TEST KEYS, this is not for production use
+STRIPE_SECRET_KEY = "sk_test_51R5FP0CyZlPHStJdtPlBALqWyi56nCughVwn5ORpOiKm1AukzeLOZqo7S3mHjACMa3yvq6V7EkLM9EDFscvrwEdh00FDxN9DOf"
+STRIPE_PUBLIC_KEY = "pk_test_51R5FP0CyZlPHStJdCuTolKP7kOlg3Z6HRzXVDBzzcIS3EsMkNidMbVY08hhNU8ai70FxROjwEBnQ3aIGgpe6GjKC00fpNzLgyF"
 stripe.api_key = STRIPE_SECRET_KEY
 
 @app.route("/create-payment-intent", methods=["POST"])
@@ -28,7 +29,7 @@ def create_payment_intent():
 
         # Retrieve amount and cartItems from the request body
         amount = data.get("amount")
-        cart_items = data.get("cartItems")  
+        cart_items = data.get("cartItems")
 
         if not amount:
             return jsonify({"error": "Missing amount"}), 400
@@ -96,20 +97,20 @@ def payment_status():
             print(f"Payment {payment_intent_id} failed.")
         else:
             print(f"Payment {payment_intent_id} status is unknown.")
-        
+
         return jsonify({"status": "received"})
 
     except Exception as e:
         print("Error:", str(e))
         return jsonify({"error": str(e)}), 500
-    
+
 
 # Fetch gallery entries.
 @app.route('/gallery.json')
 def serve_gallery_json():
     current_dir = os.path.dirname(os.path.abspath(__file__))
     return send_from_directory(current_dir, 'gallery.json')
-    
+
 @app.route("/payment-status/<payment_intent_id>", methods=["GET"])
 def get_payment_status(payment_intent_id):
     try:
@@ -126,7 +127,7 @@ def get_payment_status(payment_intent_id):
             "paymentIntentId": payment_intent_id,
             "status": payment_status
         })
-    
+
     except stripe.error.StripeError as e:
         print("Stripe Error:", str(e))
         return jsonify({"error": str(e)}), 500
@@ -168,7 +169,7 @@ def log_order_information(payment_intent, shipping_address, cart_items):
             next(reader, None) # Skip the header
             for row in reader:
                 existing_payment_intents.add(row[0])
-    
+
     if payment_intent in existing_payment_intents:
         print(f"Order with Payment ID {payment_intent} already logged.")
         return
